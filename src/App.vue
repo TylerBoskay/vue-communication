@@ -1,8 +1,9 @@
 <template>
   <base-container title='Vuex'>
-    <the-counter/>
-    <favorite-value/>
-    <change-counter/>
+    <the-counter />
+    <favorite-value />
+    <change-counter />
+    <button @click='addOne'>Add 10</button>
   </base-container>
 </template>
 
@@ -18,7 +19,16 @@ export default {
     TheCounter,
     ChangeCounter,
     FavoriteValue
-  }
+  },
+  methods: {
+    addOne() {
+      // this.$store.commit('increment', { value: 10);
+      this.$store.dispatch(
+        'increment',
+        { value: 10 }
+      );
+    },
+  },
 };
 </script>
 
